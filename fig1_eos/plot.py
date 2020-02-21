@@ -27,7 +27,7 @@ plt.xlim(0.1,.6)
 plt.ylim(1./8.,.5)
 plt.yticks([1/6.,1/4.,1/3.,1/2.],('1/6','1/4','1/3','1/2'))
 
-plt.xlabel("T (GeV)")
+plt.xlabel(r"$T$ (GeV)")
 plt.ylabel(r'$c_s^{2}$')
 
 T_range=np.arange(0.1,.6,.001)
