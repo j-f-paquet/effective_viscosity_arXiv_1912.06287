@@ -169,6 +169,7 @@ axes[1].set_yticks(np.arange(0.975,1.0251,0.025))
 axes[1].set_xlabel(r'$\tau$ (fm)')
 axes[0].set_ylabel(r"$T$ (GeV)")
 axes[1].set_ylabel(r"$\frac{T_{\mathrm{viscous,eff.}}}{T_{\mathrm{viscous}}}$")
+axes[1].axhline(y=1, color='black', linestyle=':', linewidth=2) 
 
 
 color_list=["blue","black"]
@@ -208,7 +209,7 @@ for n, (T0_in_fm, ldict) in enumerate(res_dict.items()):
     T_from_ideal= hbarc*np.array(list(map(esol_ideal.integrate,tau_range)))
     axes[0].plot(tau_range, T_from_ideal,":",color='dimgrey',label=label_ideal, linewidth=4)
 
-    axes[1].plot(tau_range, T_from_eff/T_from_exact,"-.",color=['black','purple'][n],label=r"$T_0={0:.3f}$ GeV".format(T0_in_fm*hbarc), linewidth=4)
+    axes[1].plot(tau_range, T_from_eff/T_from_exact,"-.",color=['darkgreen','purple'][n],label=r"$T_0={0:.3f}$ GeV".format(T0_in_fm*hbarc), linewidth=4)
 
     # Validation
     tauf=ldict['tauf']
